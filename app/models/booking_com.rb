@@ -31,6 +31,17 @@ class BookingCom < Reservation
       first_name: guest_detail[:guest_first_name],
       last_name: guest_detail[:guest_last_name],
       email: guest_detail[:guest_email]
+    }.merge(phone_number_attributes)
+  end
+
+  def self.phone_number_attributes
+    phone_numbers = []
+    @params[:reservation][:guest_phone_numbers].each do |number|
+      phone_numbers << { phone_number: number }
+    end
+
+    {
+      guest_phone_numbers_attributes: phone_numbers
     }
   end
 end

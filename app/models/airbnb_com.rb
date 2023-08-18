@@ -26,6 +26,16 @@ class AirbnbCom < Reservation
       first_name: @params[:guest][:first_name],
       last_name: @params[:guest][:last_name],
       email: @params[:guest][:email]
+    }.merge(phone_number_attributes)
+  end
+
+  def self.phone_number_attributes
+    {
+      guest_phone_numbers_attributes: [
+        {
+          phone_number: @params[:guest][:phone]
+        }
+      ]
     }
   end
 end
