@@ -9,7 +9,9 @@
 
 - [Package versions and gems →](#package-versions)
 - [Installation instructions →](#installation-instructions)
-- [Documentation →](#documentation)
+- [Solution context and references →](#solution_context)
+- [API Endpoint →](#documentation)
+
 
 <h2 id="package-versions"> Package Versions and Gems </h2>
 
@@ -47,7 +49,17 @@ brew install postgresql@15
 rails db:create db:migrate
 ```
 
-<h2 id="documentation"> Documentation </h2>
+<h2 id="solution_context"> Solution Context and References </h2>
+
+Differentiate two different payloads: [JSON Schema Article](https://medium.com/@DrawandCode/how-and-why-json-schema-in-rails-always-saves-the-day-60ecc68ab303).
+
+Validate schema structures; JSON Schema validator: [JSONSchemer](https://www.rubydoc.info/gems/json_schemer/0.1.7)
+
+Implement Reservation subclasses since the attributes are shared; Single Table Inheritance: [Single-Table Inheritance vs. Polymorphism in Rails](https://www.netguru.com/blog/single-table-inheritance-rails)
+
+Testing tool: [Rspec](https://rspec.info/)
+
+<h2 id="documentation"> API Endpoint </h2>
 
 #### API Reservation endpoint (POST request)
 ```
@@ -82,7 +94,7 @@ api/v1/reservations
 }
 ```
 
-<video src="https://github.com/PamJxxxx/hometime-reservation-api/assets/142566654/ee645534-2986-4d13-aead-81ba7cf78e15">
+<video src="https://github.com/PamJxxxx/hometime-reservation-api/assets/142566654/ee645534-2986-4d13-aead-81ba7cf78e15" />
 
 
 
