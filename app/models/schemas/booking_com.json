@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "http://json-schema.org/draft-06/schema#",
+  "title": "Core schema meta-schema",
+  "definitions": {
+      "schemaArray": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#" }
+      },
+      "nonNegativeInteger": {
+          "type": "integer",
+          "minimum": 0
+      },
+      "nonNegativeIntegerDefault0": {
+          "allOf": [
+              { "$ref": "#/definitions/nonNegativeInteger" },
+              { "default": 0 }
+          ]
+      },
+      "simpleTypes": {
+          "enum": [
+              "array",
+              "boolean",
+              "integer",
+              "null",
+              "number",
+              "object",
+              "string"
+          ]
+      },
+      "stringArray": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true,
+          "default": []
+      }
+  },
+  "type": ["object", "boolean"],
+  "properties": {
+    "reservation": {
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        },
+        "expected_payout_amount": {
+          "type": "string"
+        },
+        "guest_details": {
+          "properties": {
+            "localized_description": {
+              "type": "string"
+            },
+            "number_of_adults": {
+              "type": "integer"
+            },
+            "number_of_children": {
+              "type": "integer"
+            },
+            "number_of_infants": {
+              "type": "integer"
+            }
+          }
+        },
+        "guest_email": {
+          "type": "string"
+        },
+        "guest_first_name": {
+          "type": "string"
+        },
+        "guest_last_name": {
+          "type": "string"
+        },
+        "guest_phone_numbers": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "listing_security_price_accurate": {
+          "type": "string"
+        },
+        "host_currency": {
+          "type": "string"
+        },
+        "nights": {
+          "type": "integer"
+        },
+        "number_of_guests": {
+          "type": "integer"
+        },
+        "status_type": {
+          "type": "string"
+        },
+        "total_paid_amount_accurate": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "default": {}
+}
