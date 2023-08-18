@@ -42,6 +42,11 @@ bundle install
 brew install postgresql@15
 ```
 
+#### Database setup
+```bash
+rails db:create db:migrate
+```
+
 <h2 id="documentation"> Documentation </h2>
 
 #### API Reservation endpoint (POST request)
