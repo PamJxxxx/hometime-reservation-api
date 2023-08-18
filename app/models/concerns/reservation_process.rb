@@ -7,7 +7,11 @@ module ReservationProcess
 
       ActiveRecord::Base.transaction do
         guest = Guest.find_or_initialize_by(email: guest_attributes[:email])
-        guest.reservations.new(reservation_attributes)
+        reservation = guest.reservations.find_or_initialize_by(code: reservation_attributes[:code])
+        reservation.attributes = reservation_attributes
+
+        guest.reservations << reservation
+        guest.attributes = guest_attributes
 
         guest.save
         guest
